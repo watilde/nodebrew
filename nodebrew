@@ -52,7 +52,8 @@ sub init {
     $self->{src_dir} = $self->{brew_dir} . '/src';
     $self->{node_dir} = $self->{brew_dir} . '/node';
     $self->{iojs_dir} = $self->{brew_dir} . '/iojs';
-    $self->{current} = $self->{brew_dir} . '/current';
+    $self->{current_dir} = $self->{brew_dir} . '/current';
+    $self->{current} = $self->{brew_dir} . '/current/node';
     $self->{default_dir} = $self->{brew_dir} . '/default';
     $self->{alias_file} = $self->{brew_dir} . '/alias';
     $self->{bash_completion_dir} = $self->{brew_dir} . '/completions/bash';
@@ -290,6 +291,7 @@ sub _cmd_setup_dirs {
     mkdir $self->{src_dir} unless -e $self->{src_dir};
     mkdir $self->{node_dir} unless -e $self->{node_dir};
     mkdir $self->{iojs_dir} unless -e $self->{iojs_dir};
+    mkdir $self->{current_dir} unless -e $self->{current_dir};
     mkdir $self->{default_dir} unless -e $self->{default_dir};
     mkdir "$self->{default_dir}/bin" unless -e "$self->{default_dir}/bin";
 }
